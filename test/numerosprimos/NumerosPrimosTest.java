@@ -14,25 +14,25 @@ import static org.junit.Assert.*;
  */
 public class NumerosPrimosTest {
     
-    @Test
+    @Test //Test de prueba para valor=0
     public void generaPrimos(){
         int[] resultado = CribaEratostenes.generarPrimos(0);
         int[] esperado = {};
         assertArrayEquals(esperado,resultado);
     }
-    @Test
+    @Test //Test de prueba para valor=2
     public void generaPrimos(){
         int[] resultado = CribaEratostenes.generarPrimos(2);
         assertEquals(1, resultado.length);
         assertEquals(2,resultado[0]);
     }
-    @Test
+    @Test //Test de prueba para valor=3
     public void generaPrimos() {
         int[] resultado = CribaEratostenes.generarPrimos(3);
         int [] esperado = {2,3};
         Assert.assertArrayEquals(esperado, resultado);
     }
-    @Test
+    @Test //Test de prueba para valor=100
     public void testGenerarPrimos() {
         int[] resultado = CribaEratostenes.generarPrimos(100);
         int[] esperado = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};

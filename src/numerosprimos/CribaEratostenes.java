@@ -31,7 +31,7 @@ public class CribaEratostenes
  
         // Inicializar el array
         for (i=2; i<dim; i++){
-        esPrimo[i] = true; 
+            esPrimo[i] = true; 
         }
 
         // Criba
