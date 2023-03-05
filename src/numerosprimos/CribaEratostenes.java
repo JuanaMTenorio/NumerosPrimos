@@ -22,41 +22,41 @@ public class CribaEratostenes
  */
  public static int[] generarPrimos (int max) 
  { 
-    int i,j; 
+    int num,multiplo; 
  
     if (max >= 2) { 
         // Declaraciones
-        int dim = max + 1; // Tamaño del array 
-        boolean[] esPrimo = new boolean[dim]; 
+        int tamaño = max + 1; // Tamaño del array 
+        boolean[] esPrimo = new boolean[tamaño]; 
  
         // Inicializar el array
-        for (i=2; i<dim; i++){
-            esPrimo[i] = true; 
+        for (num=2; num<tamaño; num++){
+            esPrimo[num] = true; 
         }
 
         // Criba
-        for (i=2; i<Math.sqrt(dim)+1; i++){ 
-            if (esPrimo[i]){
-                // Eliminar los múltiplos de i
-                for (j=2*i; j<dim; j+=i){
-                    esPrimo[j] = false; 
+        for (num=2; num<Math.sqrt(tamaño)+1; num++){ 
+            if (esPrimo[num]){
+                // Eliminar los múltiplos de num
+                for (multiplo=2*num; multiplo<tamaño; multiplo+=num){
+                    esPrimo[multiplo] = false; 
                 }
             } 
         }
  
         // ¿Cuántos primos hay? 
         int cuenta = 0; 
-        for (i=2; i<dim; i++){ 
-            if (esPrimo[i]){ 
+        for (num=2; num<tamaño; num++){ 
+            if (esPrimo[num]){ 
                 cuenta++; 
             }
         } 
         
         // Rellenar el vector de números primos
         int[] primos = new int[cuenta]; 
-        for (i=2, j=0; i<dim; i++){ 
-            if (esPrimo[i]){
-                primos[j++] = i; 
+        for (num=2, multiplo=0; num<tamaño; num++){ 
+            if (esPrimo[num]){
+                primos[multiplo++] = num; 
             }
         } 
         
